@@ -8,8 +8,6 @@
     <!-- <homeCom><homeCom /> -->
     <!-- 3버전 -->
     <homeCom />
-    <status/>
-    <newPage/>
   </div>
 </template>
 
