@@ -198,7 +198,8 @@ export default {
     },
     detailShow: function (e) {
       const self = e.target.parentNode;
-      this.detailImg = self.childNodes[0].src;
+      // console.log('@/assets'+self.childNodes[0].getAttribute('src'));
+      this.detailImg = require('@/assets/img/apple.png'); 
       this.detailName = self.childNodes[1].textContent;
       this.detailPrice = self.childNodes[2].textContent;
       this.detailAlt = self.childNodes[0].alt;

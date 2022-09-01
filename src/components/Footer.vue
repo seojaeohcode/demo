@@ -45,6 +45,10 @@
     color: white;
     font-weight: bold;
     font-size: 1vw;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 @media screen and (max-width: 767px) {
@@ -56,6 +60,10 @@
     color: white;
     font-weight: bold;
     font-size: 1vw;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 </style>
