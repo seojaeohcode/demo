@@ -1,7 +1,7 @@
 <template>
   <div id="wrap">
     <nav>
-      <p id="logo">RustMart</p>
+      <p id="logo" @click="moveLink">RustMart</p>
       <p id="price">0</p>
     </nav>
   </div>
@@ -19,7 +19,11 @@ export default {
   created() {},
   mounted() {},
   unmounted() {},
-  methods: {},
+  methods: {
+    moveLink(){
+      this.$parent.ok = true;
+    }
+  },
 };
 </script>
 

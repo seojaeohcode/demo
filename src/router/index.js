@@ -27,6 +27,11 @@ const routes = [
     name: 'rustMart',
     component: ()=> import(/*webpackPrefetch:true*/ '../views/rustMart.vue'),
   },
+  {
+    path: '/uservue',
+    name: 'uservue',
+    component: ()=> import(/*webpackPrefetch:true*/ '../components/userVue/User.vue'),
+  },
 ]
 
 const router = createRouter({

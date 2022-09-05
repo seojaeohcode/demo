@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/newPage">newpage</router-link> |
-    <router-link to="/rustMart">rustMart</router-link>
+    <router-link to="/rustMart">rustMart</router-link> |
+    <router-link to="/uservue">uservue</router-link>
   </nav>
   <router-view />
 </template>

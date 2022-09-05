@@ -114,7 +114,7 @@
     </div>
     <div id="detail" v-if="ok == false">
       <div id="detailBox">
-        <img src="{{detailImg}}" alt="" id="pImg" />
+        <img :src="require(`@/assets/img/` + detilImg)" alt="" id="pImg" />
         <p id="pName">{{ detailName }}</p>
         <p id="pAlt">{{ detailAlt }}</p>
         <p id="pPrice">{{ detailPrice }}</p>
@@ -130,24 +130,22 @@ export default {
   data() {
     return {
       ok: true,
-      detailImg: null,
-      detailName: null,
-      detailPrice: null,
-      detailAlt: null,
+      detailImg: "",
+      detailName: "",
+      detailPrice: "",
+      detailAlt: "",
     };
   },
   setup() {},
   created() {},
-  mounted() {
-
-  },
+  mounted() {},
   unmounted() {},
   methods: {
     passData: function (e) {
       let prev = 0;
       // 부모노드
       const self = e.target.parentNode;
-      
+
       let price = self.childNodes[2].textContent.split("$");
       // 합계
       let sum = 0;
@@ -158,17 +156,19 @@ export default {
       if (prev == 0) {
         console.log(prev);
         console.log(price);
-        sum = Number(prev)+Number(price[1]);
+        sum = Number(prev) + Number(price[1]);
         console.log(sum);
       } else {
         console.log(prev);
         console.log(price);
-        sum = Number(prev[1])+Number(price[1]);
+        sum = Number(prev[1]) + Number(price[1]);
         console.log(sum);
       }
 
+      sum = sum.toFixed(2);
+
       // console.log(sum);
-      chPrice.textContent = '$'+sum.toString();
+      chPrice.textContent = "$" + sum.toString();
     },
     passData2: function (e) {
       let prev = 0;
@@ -193,13 +193,24 @@ export default {
         console.log(sum);
       }
 
+      sum = sum.toFixed(2);
       // console.log(sum);
       chPrice.textContent = "$" + sum.toString();
     },
     detailShow: function (e) {
       const self = e.target.parentNode;
-      // console.log('@/assets'+self.childNodes[0].getAttribute('src'));
-      this.detailImg = require('@/assets/img/apple.png'); 
+      // 버튼(Add to Cart)의 상위노드
+      // 자식노드의 이미지 주소를 가져옴 (예, http://localhost8080/img/apple.5b54646.png)
+      console.log(self.childNodes[0].src);
+      // 자식노드 중에 바인딩된 파일명만 잘라서 가져옴 (예, apple.5b54646.png)
+      this.detilImg = self.childNodes[0].src.split("/")[4];
+      // 주소에서 바인딩값은 제거하고 이미지 파일명만 잘라 붙임 (예, apple.png)
+      this.detilImg =
+      this.detilImg.split(".")[0] + "." + this.detilImg.split(".")[2];
+      // let src = self.childNodes[0].getAttribute('src');
+      // console.log(src);
+      // let src = '@/assets/img/pineapple.png';
+      // this.detailImg = require(src);
       this.detailName = self.childNodes[1].textContent;
       this.detailPrice = self.childNodes[2].textContent;
       this.detailAlt = self.childNodes[0].alt;
@@ -210,7 +221,7 @@ export default {
 </script>
 
 <style scoped>
-#detailBox>button{
+#detailBox > button {
   background-color: rgb(255, 109, 41);
   color: white;
   width: 98%;
