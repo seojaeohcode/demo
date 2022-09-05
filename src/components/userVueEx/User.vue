@@ -5,8 +5,8 @@
       <p>이름: 뷰제이에스</p>
       <hr />
     </div>
-    <UserDetail></UserDetail>
-    <UserEdit></UserEdit>
+    <UserDetail :name="name" :address="address" :phone="phone" />
+    <UserEdit :name="name" :address="address" :phone="phone" @chilx="parents" />
   </div>
 </template>
 
@@ -19,13 +19,28 @@ export default {
     UserDetail,
     UserEdit,
   },
+  data() {
+    return {
+      name: "VueJs",
+      address: "Seoul",
+      phone: "010-1234-5678",
+    };
+  },
+  methods: {
+    parents(user) {
+      console.log("부모가 받았습니다.");
+      this.name = user.name;
+      this.address = user.address;
+      this.phone = user.phone;
+    },
+  },
 };
 </script>
 
 <style scoped>
-  #wrap{
-    padding: 3rem;
-    background: skyblue;
-    height: 40vh;
-  }
+#wrap {
+  padding: 3rem;
+  background: skyblue;
+  height: 40vh;
+}
 </style>

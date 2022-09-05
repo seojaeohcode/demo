@@ -32,6 +32,16 @@ const routes = [
     name: 'uservue',
     component: ()=> import(/*webpackPrefetch:true*/ '../components/userVue/User.vue'),
   },
+  {
+    path: '/ex',
+    name: 'uservueEx',
+    component: ()=> import(/*webpackPrefetch:true*/ '../components/userVueEx/User.vue'),
+  },
+  {
+    path: '/newPage2',
+    name: 'newPage2',
+    component: ()=> import(/*webpackPrefetch:true*/ '../views/newPageView.vue'),
+  },
 ]
 
 const router = createRouter({
