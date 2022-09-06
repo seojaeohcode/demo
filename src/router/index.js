@@ -42,6 +42,16 @@ const routes = [
     name: 'newPage2',
     component: ()=> import(/*webpackPrefetch:true*/ '../views/newPageView.vue'),
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: ()=> import(/*webpackPrefetch:true*/ '../views/loginView.vue'),
+  },
+  {
+    path: '/boot',
+    name: 'boot',
+    component: ()=> import(/*webpackPrefetch:true*/ '../views/boot.vue'),
+  },
 ]
 
 const router = createRouter({

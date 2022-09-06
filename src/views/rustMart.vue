@@ -1,6 +1,5 @@
 <template>
   <div>
-  <headerView/>
   <martView/>
   <footerView/>
   </div>

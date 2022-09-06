@@ -1,7 +1,7 @@
 <template>
-  <div id="wrap">
+  <div id="wrap2">
     <nav>
-      <p id="logo" @click="moveLink">RustMart</p>
+      <p id="logo" style="cursor:pointer;" @click="moveLink">RustMart</p>
       <p id="price">0</p>
     </nav>
   </div>
@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 @media screen and (min-width: 1024px) {
-  #wrap {
+  #wrap2 {
     background-color: rgb(255, 109, 41);
     height: 6rem;
   }

@@ -1,5 +1,6 @@
 <template>
   <div id="wrap">
+    <headerView/>
     <div id="line1" v-if="ok == true">
       <div class="item" id="apple">
         <img

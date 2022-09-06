@@ -6,7 +6,9 @@
     <router-link to="/rustMart">rustMart</router-link> |
     <router-link to="/uservue">uservue</router-link> |
     <router-link to="/ex">Ex</router-link> |
-    <router-link to="/newPage2">newPage2</router-link>
+    <router-link to="/newPage2">newPage2</router-link> |
+    <router-link to="/login">login</router-link> |
+    <router-link to="/boot">bootStrap</router-link>
   </nav>
   <router-view />
 </template>
